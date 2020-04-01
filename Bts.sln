@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{34036844-64E7-43A5-9151-4AD90E180989}") = "Bts", "Bts.iotedgeproj", "{87751AC9-4866-43EB-8697-48ED8ADE8176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtsData", "..\BtsData\BtsData.csproj", "{3B1C959D-D99D-4484-8F45-D5287A09CDEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87751AC9-4866-43EB-8697-48ED8ADE8176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87751AC9-4866-43EB-8697-48ED8ADE8176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87751AC9-4866-43EB-8697-48ED8ADE8176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87751AC9-4866-43EB-8697-48ED8ADE8176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B1C959D-D99D-4484-8F45-D5287A09CDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1C959D-D99D-4484-8F45-D5287A09CDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1C959D-D99D-4484-8F45-D5287A09CDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B1C959D-D99D-4484-8F45-D5287A09CDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9DBBD0D-7FCA-4D15-ACF2-76E39D818EBE}
+	EndGlobalSection
+EndGlobal
