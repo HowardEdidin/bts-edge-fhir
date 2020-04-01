@@ -39,6 +39,24 @@
               "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0",
               "createOptions": "{}"
             }
+          },
+          "SQLite": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge/sqlite:1.0"
+            }
+          },
+          "db": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge/sqlite:1.0"
+            }
           }
         }
       }
@@ -48,10 +66,59 @@
         "schemaVersion": "1.0",
         "routes": {
           "BtsDataToIoTHub": "FROM /messages/modules/BtsData/outputs/* INTO $upstream",
-          "sensorToBtsData": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/BtsData/inputs/input1\")"
+          "sensorToBtsData": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/BtsData/inputs/input1\")",
+          "sqliteToIoTHub": "FROM /messages/modules/SQLite/outputs/sqliteOutput INTO $upstream"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "SQLite": {
+      "properties.desired": {
+        "SQLiteConfigs": {
+          "Db01": {
+            "DbPath": "/app/db/test.db",
+            "Table01": {
+              "TableName": "test",
+              "Column01": {
+                "ColumnName": "Id",
+                "Type": "numeric",
+                "IsKey": "true",
+                "NotNull": "true"
+              },
+              "Column02": {
+                "ColumnName": "Value",
+                "Type": "numeric",
+                "IsKey": "false",
+                "NotNull": "true"
+              }
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "properties.desired": {
+        "SQLiteConfigs": {
+          "Db01": {
+            "DbPath": "/app/db/test.db",
+            "Table01": {
+              "TableName": "test",
+              "Column01": {
+                "ColumnName": "Id",
+                "Type": "numeric",
+                "IsKey": "true",
+                "NotNull": "true"
+              },
+              "Column02": {
+                "ColumnName": "Value",
+                "Type": "numeric",
+                "IsKey": "false",
+                "NotNull": "true"
+              }
+            }
+          }
         }
       }
     }
